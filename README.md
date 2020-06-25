@@ -1,4 +1,4 @@
-# Code Challenge by using Cypress
+# Code Challenge Using Cypress
 
 Automated test cases to remove unwanted whitespace from a string and to check the given string is palindrome or not using cypress.
 
