@@ -2,7 +2,7 @@
 
 describe('To remove unwanted whitespave from the string ', () => {
     beforeEach(() => {
-        cy.visit('/example1');
+        cy.visit('/example5');
         cy.get('[data-cy=checkInput]').as('inputValue');
         cy.get('[data-cy=removeWhitespace]').as('removeWhitespace');
         cy.get('[data-cy=output]').as('output');

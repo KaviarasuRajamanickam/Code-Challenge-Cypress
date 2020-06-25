@@ -2,6 +2,50 @@
 
 Automated test cases to remove unwanted whitespace from a string and to check the given string is palindrome or not using cypress.
 
+## Dependencies
+
+To test the application with Cypress commands, you need a Cypress testing application in your local machine.
+
+- Download and use the below application to test the Cypress commands 
+https://github.com/KaviarasuRajamanickam/cypress-testing
+
+```shell
+    removeExtraSpace = () => {
+        if(this.state.inputValue === ''){
+            this.setState({
+                result: 'The value should not be empty',
+                error: true
+            })
+        } else {
+            this.setState({
+                result: this.state.inputValue.replace(/\s+/g,' ').trim(),
+                error: false
+            })
+        }
+    }
+
+    checkPalindrome = () => {
+        if(this.state.inputValue === ''){
+            this.setState({
+                result: 'The value should not be empty',
+                error: true
+            })
+        } else {
+            if(this.state.inputValue === this.state.inputValue.split('').reverse().join('')) {
+                this.setState({
+                    result: '"'+this.state.inputValue +'" is a palindrome',
+                    error: false
+                })
+            } else {
+                this.setState({
+                    result: '"'+this.state.inputValue +'" is not a palindrome',
+                    error: true
+                })
+            }
+        }        
+    }
+```
+
 ## Test cases to remove unwanted whitespace from a string
 
 - Assert the value entered should not be empty.

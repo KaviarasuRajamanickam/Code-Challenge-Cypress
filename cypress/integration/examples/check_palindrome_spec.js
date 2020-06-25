@@ -2,7 +2,7 @@
 
 describe('To check whether the entered string is palindrome or not', () => {
     beforeEach(() => {
-        cy.visit('/example1');
+        cy.visit('/example5');
         cy.get('[data-cy=checkInput]').as('inputValue');
         cy.get('[data-cy=checkPalindrome]').as('checkPalindrome');
         cy.get('[data-cy=output]').as('output');
