@@ -6,6 +6,8 @@ Automated test cases to remove unwanted whitespace from a string and to check th
 
 - Assert the value entered should not be empty.
 
+- Assert the value entered should contains extra whitespace, else throw error.
+
 - Assert that the entered value should not have extra space before the string.
 
 - Assert that the entered value should not have extra space after the string.
@@ -36,13 +38,13 @@ Automated test cases to remove unwanted whitespace from a string and to check th
                 .should('be.equal', 'The value should not be empty');
         });
 
-        it('Assert that the entered value should not have extra space before the string', () => {
-            cy.get('@inputValue').type('  This is to test the string');
+        it('Assert the value entered should contains extra whitespace, else throw error', () => {
+            cy.get('@inputValue').type('string');
             cy.get('@removeWhitespace').click();
             cy.get('@result')
-                .should('have.class','success')
+                .should('have.class','error')
                 .invoke('text')
-                .should('be.equal', 'This is to test the string');
+                .should('be.equal', 'The entered value doesn\'t have any whitespace');
         });
         ----------
         -------

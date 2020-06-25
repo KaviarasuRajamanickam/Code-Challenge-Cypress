@@ -17,6 +17,15 @@ describe('To remove unwanted whitespave from the string ', () => {
             .should('be.equal', 'The value should not be empty');
     });
 
+    it('Assert the value entered should contains extra whitespace, else throw error', () => {
+        cy.get('@inputValue').type('string');
+        cy.get('@removeWhitespace').click();
+        cy.get('@result')
+            .should('have.class','error')
+            .invoke('text')
+            .should('be.equal', 'The entered value doesn\'t have any whitespace');
+    });
+
     it('Assert that the entered value should not have extra space before the string', () => {
         cy.get('@inputValue').type('  This is to test the string');
         cy.get('@removeWhitespace').click();
