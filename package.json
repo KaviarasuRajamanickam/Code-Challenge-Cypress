@@ -1,0 +1,23 @@
+{
+  "name": "code-challenge-cypress",
+  "version": "1.0.0",
+  "description": "To assert the code is working as expected",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^4.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaviarasuRajamanickam/Code-Challenge-Cypress.git"
+  },
+  "author": "Lister",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaviarasuRajamanickam/Code-Challenge-Cypress/issues"
+  },
+  "homepage": "https://github.com/KaviarasuRajamanickam/Code-Challenge-Cypress#readme"
+}
