@@ -11,7 +11,7 @@ describe('To check whether the entered string is palindrome or not', () => {
     it('Assert the value entered should not be empty', () => {
         cy.get('@checkPalindrome').click();
         cy.get('@result')
-            .should('have.class','error')
+            .should('have.class', 'error')
             .invoke('text')
             .should('be.equal', 'The value should not be empty');
     })
@@ -20,7 +20,7 @@ describe('To check whether the entered string is palindrome or not', () => {
         cy.get('@inputValue').type('madam');
         cy.get('@checkPalindrome').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', '"madam" is a palindrome');
     })
@@ -29,7 +29,7 @@ describe('To check whether the entered string is palindrome or not', () => {
         cy.get('@inputValue').type('Madam');
         cy.get('@checkPalindrome').click();
         cy.get('@result')
-            .should('have.class','error')
+            .should('have.class', 'error')
             .invoke('text')
             .should('be.equal', '"Madam" is not a palindrome');
     })
@@ -38,7 +38,7 @@ describe('To check whether the entered string is palindrome or not', () => {
         cy.get('@inputValue').type('test');
         cy.get('@checkPalindrome').click();
         cy.get('@result')
-            .should('have.class','error')
+            .should('have.class', 'error')
             .invoke('text')
             .should('be.equal', '"test" is not a palindrome');
     })
@@ -47,7 +47,7 @@ describe('To check whether the entered string is palindrome or not', () => {
         cy.get('@inputValue').type('23#@@#32');
         cy.get('@checkPalindrome').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', '"23#@@#32" is a palindrome');
     })

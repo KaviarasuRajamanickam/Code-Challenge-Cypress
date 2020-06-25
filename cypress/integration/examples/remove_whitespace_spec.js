@@ -12,7 +12,7 @@ describe('To remove unwanted whitespave from the string ', () => {
     it('Assert the value entered should not be empty', () => {
         cy.get('@removeWhitespace').click();
         cy.get('@result')
-            .should('have.class','error')
+            .should('have.class', 'error')
             .invoke('text')
             .should('be.equal', 'The value should not be empty');
     });
@@ -21,7 +21,7 @@ describe('To remove unwanted whitespave from the string ', () => {
         cy.get('@inputValue').type('string');
         cy.get('@removeWhitespace').click();
         cy.get('@result')
-            .should('have.class','error')
+            .should('have.class', 'error')
             .invoke('text')
             .should('be.equal', 'The entered value doesn\'t have any whitespace');
     });
@@ -30,7 +30,7 @@ describe('To remove unwanted whitespave from the string ', () => {
         cy.get('@inputValue').type('  This is to test the string');
         cy.get('@removeWhitespace').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', 'This is to test the string');
     });
@@ -39,7 +39,7 @@ describe('To remove unwanted whitespave from the string ', () => {
         cy.get('@inputValue').type('This is to test the string  ');
         cy.get('@removeWhitespace').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', 'This is to test the string');
     });
@@ -48,7 +48,7 @@ describe('To remove unwanted whitespave from the string ', () => {
         cy.get('@inputValue').type('This   is to test   the   string');
         cy.get('@removeWhitespace').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', 'This is to test the string');
     });
@@ -57,16 +57,16 @@ describe('To remove unwanted whitespave from the string ', () => {
         cy.get('@inputValue').type('  This   is to test   the   string   ');
         cy.get('@removeWhitespace').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', 'This is to test the string');
     });
-    
+
     it('Assert that the entered value should not have any whitespace before, after and within', () => {
         cy.get('@inputValue').type('  This   is to test   the   string   ');
         cy.get('@removeAllWhitespace').click();
         cy.get('@result')
-            .should('have.class','success')
+            .should('have.class', 'success')
             .invoke('text')
             .should('be.equal', 'Thisistotestthestring');
     });
