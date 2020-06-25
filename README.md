@@ -31,7 +31,7 @@ https://github.com/KaviarasuRajamanickam/cypress-testing
                 error: true
             })
         } else {
-            if(this.state.inputValue === this.state.inputValue.split('').reverse().join('')) {
+            if(this.state.inputValue === this.reverseString(this.state.inputValue)) {
                 this.setState({
                     result: '"'+this.state.inputValue +'" is a palindrome',
                     error: false
@@ -43,6 +43,10 @@ https://github.com/KaviarasuRajamanickam/cypress-testing
                 })
             }
         }        
+    }
+
+    reverseString = (str) => {
+        return (str === '') ? '' : this.reverseString(str.substr(1)) + str.charAt(0);
     }
 ```
 
