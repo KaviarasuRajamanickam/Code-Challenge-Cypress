@@ -6,17 +6,17 @@ Automated test cases to remove unwanted whitespace from a string and to check th
 
 - Assert the value entered should not be empty.
 
-- Assert the value entered should contains extra whitespace, else throw error.
+- Assert the value entered should contains extra whitespace anywhere.
 
-- Assert that the entered value should not have extra space before the string.
+- Assert that the entered value should not have extra whitespace before.
 
-- Assert that the entered value should not have extra space after the string.
+- Assert that the entered value should not have extra whitespace after.
 
-- Assert that the entered value should not have extra space within the string.
+- Assert that the entered value should not have extra whitespace within.
 
-- Assert that the entered value should not have extra space before, after and within the string.
+- Assert that the entered value should not have extra whitespace before, after and within.
 
-- Assert that the entered value should not have any space before, after and within the string.
+- Assert that the entered value should not have any whitespace before, after and within.
 
 ### remove_whitespace_spec.js
 
@@ -38,13 +38,13 @@ Automated test cases to remove unwanted whitespace from a string and to check th
                 .should('be.equal', 'The value should not be empty');
         });
 
-        it('Assert the value entered should contains extra whitespace, else throw error', () => {
+        it('Assert the value entered should contains extra whitespace anywhere', () => {
             cy.get('@inputValue').type('string');
             cy.get('@removeWhitespace').click();
             cy.get('@result')
                 .should('have.class','error')
                 .invoke('text')
-                .should('be.equal', 'The entered value doesn\'t have any whitespace');
+                .should('be.equal', 'The entered value doesn't have any whitespace');
         });
         ----------
         -------
